@@ -1,0 +1,356 @@
+@keyframes bounceIn {
+ from {
+ opacity: 0;
+ transform: scale(0.5);
+ }
+ to {
+ opacity: 1;
+ transform: scale(1);
+ }
+ }
+
+ wallpaper,
+ .picture-shadow,
+ .picture-image,
+ .name,
+ .job,
+ .hr,
+ .description,
+ .contact,
+ .social li {
+ animation-duration: 1s;
+ animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+ animation-fill-mode: both;
+ }
+ .contact {
+ animation-name: bounceIn;
+ }
+
+ @keyframes fillUp {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+ }
+
+  @keyframes picImage {
+  from {
+    opacity: 0;
+    transform: scale(1.2) translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+ }
+
+ @keyframes picShadow {
+  from {
+    opacity: 0;
+    transform: scale(1.2) translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1) translateY(0);
+  }
+ }
+
+  @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ }
+
+  @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ }
+
+  @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ }
+
+  .picture-shadow,
+ .picture-image {
+  animation-duration: 750ms;
+  animation-timing-function: cubic-bezier(0, 0.5, 0.25, 1.25);
+ }
+
+  wallpaper {
+  animation-timing-function: ease-out;
+ }
+ .wallpaper.is-loaded {
+  animation-delay: 1s;
+  animation-name: zoomOut;
+ }
+ .picture.is-loaded .picture-shadow {
+  animation-name: picShadow;
+ }
+ .picture.is-loaded .picture-image {
+  animation-name: picImage;
+ }
+ .name {
+  animation-name: slideDown;
+ }
+ .job {
+  animation-name: slideUp;
+ }
+ .hr {
+  animation-name: fillUp;
+ }
+ .description {
+  animation-name: slideUp;
+ }
+
+ .social li {
+  animation-duration: 500ms;
+  animation-name: slideUp;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+ }
+
+ .name {
+  animation-delay: 100ms;
+ }
+ .job {
+  animation-delay: 200ms;
+ }
+ .hr {
+  animation-delay: 300ms;
+ }
+ .description {
+  animation-delay: 400ms;
+ }
+ .picture-image {
+  animation-delay: 500ms;
+ }
+ .picture-shadow {
+  animation-delay: 500ms;
+ }
+ .contact {
+  animation-delay: 600ms;
+ }
+
+ .name {
+  animation-delay: 100ms;
+ }
+ .job {
+  animation-delay: 200ms;
+ }
+ .hr {
+  animation-delay: 300ms;
+ }
+ .description {
+  animation-delay: 400ms;
+ }
+ .picture-image {
+  animation-delay: 500ms;
+ }
+ .picture-shadow {
+  animation-delay: 500ms;
+ }
+ .contact {
+  animation-delay: 600ms;
+ }
+
+  .wallpaper,
+ .picture-shadow,
+ .picture-image {
+  opacity: 0;
+ }
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale up animation */
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blink animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Apply animations to elements */
+.hero-content h1 {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content .subtitle {
+    animation: slideInLeft 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.hero-buttons {
+    animation: slideInRight 1s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.about-section {
+    animation: fadeIn 1s ease-out;
+}
+
+.skills-section {
+    animation: slideInLeft 1s ease-out;
+}
+
+.projects-section {
+    animation: slideInRight 1s ease-out;
+}
+
+.experience-section {
+    animation: fadeIn 1s ease-out;
+}
+
+.contact-section {
+    animation: scaleUp 1s ease-out;
+}
+
+/* Hover animations */
+.skill-item, .project-card, .contact-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover, .project-card:hover, .contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover animation */
+.button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+/* Social icons hover animation */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Form input focus animation */
+.form-group input:focus,
+.form-group textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Timeline animation */
+.timeline-item {
+    /* Removed initial opacity and transform to ensure content is always visible */
+    /* opacity: 0; */
+    /* transform: translateY(20px); */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation animation */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    .skills-section,
+    .projects-section {
+        animation: fadeIn 1s ease-out;
+    }
+}
