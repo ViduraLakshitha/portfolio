@@ -2,11 +2,11 @@ function loadImage(id, targetId) {
   var el = document.getElementById(id);
   var targetEl = targetId ? document.getElementById(targetId) : el;
   var imageToLoad;
-  if (el.dataset.image) {
+  if (el && el.dataset && el.dataset.image) {
     imageToLoad = el.dataset.image;
-  } else if (typeof el.currentSrc === 'undefined') {
+  } else if (el && typeof el.currentSrc === 'undefined') {
     imageToLoad = el.src;
-  } else {
+  } else if (el) {
     imageToLoad = el.currentSrc;
   }
   if (imageToLoad) {
@@ -16,37 +16,36 @@ function loadImage(id, targetId) {
       targetEl.classList.add('is-loaded');
     };
   }
- }
+}
 
-  function loadImage(id, targetId) {}
-
-   var el = document.getElementById(id);
-
-    var targetEl = targetId ? document.getElementById(targetId) : el;
-
-     var imageToLoad;
-
-     if (el.dataset.image) {
-  imageToLoad = el.dataset.image;
- } else if (typeof el.currentSrc === 'undefined') {
-  imageToLoad = el.src;
- } else {
-  imageToLoad = el.currentSrc;
- }
-
-  if (imageToLoad){
-       var img = new Image();
- img.src = imageToLoad
-  }
-
-   img.onload = function() {
-  targetEl.classList.add('is-loaded');
- };
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   loadImage('wallpaper');
   loadImage('pictureImage', 'picture');
- });
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+  function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+  }
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      if (mobileNavOverlay) mobileNavOverlay.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+  if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener('click', closeMobileMenu);
+  }
+});
 
 // Handle contact form submission
 document.getElementById('contactForm').addEventListener('submit', function(e) {

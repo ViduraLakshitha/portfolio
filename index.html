@@ -14,7 +14,12 @@
       <nav class="navbar">
             <div class="nav-content">
                   <div class="logo">VL</div>
-                  <ul class="nav-links">
+                  <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                  </button>
+                  <ul class="nav-links" id="navLinks">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
@@ -24,6 +29,7 @@
                   </ul>
             </div>
       </nav>
+      <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
       <section id="home" class="hero">
             <div class="hero-content">
@@ -38,7 +44,10 @@
 
       <section id="about" class="about-section">
             <div class="container">
-                  <h2>About Me</h2>
+                  <div class="about-me">
+                        <h2>About Me</h2>
+                  </div>
+                  <!-- <h2>About Me</h2> -->
                   <div class="about-content">
                         <div class="about-image">
                               <img src="images/mypic.jpg" alt="Vidura Lakshitha">
@@ -57,7 +66,7 @@
                               <div class="about-details">
                                     <div class="detail-item">
                                           <i class="fas fa-graduation-cap"></i>
-                                          <span>BSc in Information Technology</span>
+                                          <span>BSc in Information Technology in SLIIT</span>
                                     </div>
                                     <!-- <div class="detail-item">
                                           <i class="fas fa-briefcase"></i>
