@@ -36,9 +36,10 @@ html {
 }
 
 body {
-  background: #181c2b;
-  color: #b3b8c3;
-  font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background);
 }
 
 /* Typography */
@@ -46,7 +47,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: #fff;
 }
 
 h1 {
@@ -76,9 +76,9 @@ h2::after {
 
 /* Layout */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
 
 .about-me {
@@ -87,8 +87,6 @@ h2::after {
 
 section {
     padding: 6rem 0;
-    background: transparent;
-    color: #b3b8c3;
 }
 
 /* Navigation */
@@ -315,40 +313,34 @@ section {
 }
 
 .button.primary {
-    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
-    color: #fff;
-    box-shadow: 0 2px 16px #6a82fb44;
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow), var(--glow-primary);
 }
 
 .button.secondary {
-    background: transparent;
-    color: #6a82fb;
-    border: 2px solid #6a82fb;
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow);
 }
 
 .button.primary:hover {
-    box-shadow: 0 4px 32px #fc5c7d88;
+    box-shadow: var(--shadow-lg), var(--glow-secondary);
     transform: translateY(-2px);
 }
 
 .button.secondary:hover {
-    background: #6a82fb;
-    color: #fff;
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-lg), var(--glow-primary);
 }
 
 /* About Section */
 .about-section {
-  background: #232a47;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  padding: 2.5rem 1.5rem;
-  box-shadow: 0 2px 24px #6a82fb22;
-}
-.about-me h2 {
-  color: #6a82fb;
-}
-.about-details .detail-item i {
-  color: #43e97b;
+    padding: 8rem 0;
+    background: var(--background);
 }
 
 .about-content {
@@ -424,15 +416,10 @@ section {
 
 /* Skills Section */
 .skills-section {
-  background: #232a47;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  padding: 2.5rem 1.5rem;
-  box-shadow: 0 2px 24px #fc5c7d22;
+    padding: 8rem 0;
+    background: var(--background-alt);
 }
-.skills-section h2 {
-  color: #fc5c7d;
-}
+
 .skills-grid {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -456,7 +443,7 @@ section {
 }
 
 .skill-category h3 {
-    color: #6a82fb;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
@@ -489,21 +476,16 @@ section {
 
 .skill-item i {
     font-size: 1.5rem;
-    color: #38f9d7;
+    color: var(--primary-color);
     transition: var(--transition);
 }
 
 /* Projects Section */
 .projects-section {
-  background: #232a47;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  padding: 2.5rem 1.5rem;
-  box-shadow: 0 2px 24px #43e97b22;
+    padding: 8rem 0;
+    background: var(--background);
 }
-.projects-section h2 {
-  color: #43e97b;
-}
+
 .projects-grid {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -515,10 +497,10 @@ section {
 
 .project-card {
     position: relative;
-    background: #181c2b;
-    border-radius: 1.5rem;
+    background: var(--background);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 16px #6a82fb22;
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
@@ -604,11 +586,10 @@ section {
 }
 
 .project-tech span {
-    background: #232a47;
-    color: #43e97b;
-    border-radius: 1rem;
-    padding: 0.2rem 0.8rem;
-    margin-right: 0.5rem;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: var(--transition);
@@ -702,15 +683,10 @@ section {
 
 /* Contact Section */
 .contact-section {
-  background: #232a47;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  padding: 2.5rem 1.5rem;
-  box-shadow: 0 2px 24px #38f9d722;
+    padding: 8rem 0;
+    background: var(--background);
 }
-.contact-section h2 {
-  color: #38f9d7;
-}
+
 .contact-content {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -743,7 +719,7 @@ section {
 
 .contact-item i {
     font-size: 2rem;
-    color: #fc5c7d;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -761,21 +737,20 @@ section {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #6a82fb;
-    border-radius: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
-    background: #181c2b;
-    color: #fff;
+    background: var(--background);
     position: relative;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #fc5c7d;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), var(--glow-primary);
     transform: translateY(-2px);
 }
@@ -865,10 +840,9 @@ section {
 
 /* Footer */
 .footer {
-    background: #181c2b;
-    color: #b3b8c3;
-    padding: 2rem 0 1rem 0;
-    border-top: 2px solid #232a47;
+    background: var(--text-color);
+    color: white;
+    padding: 4rem 0;
 }
 
 .footer-content {
@@ -887,9 +861,9 @@ section {
 
 .social-links a {
     position: relative;
-    color: #6a82fb;
+    color: white;
     font-size: 1.5rem;
-    transition: color 0.2s;
+    transition: var(--transition);
     width: 50px;
     height: 50px;
     display: flex;
@@ -928,7 +902,7 @@ section {
 .social-links a:hover {
     transform: translateY(-5px) rotate(360deg);
     box-shadow: var(--shadow-lg), var(--glow-primary);
-    color: #fc5c7d;
+    color: white;
 }
 
 .social-links a:hover::before {
@@ -1195,14 +1169,4 @@ section {
     padding: 5rem 1rem 2rem 1rem;
   }
   .nav-content { padding: 0 0.5rem; }
-}
-
-@media (max-width: 600px) {
-  .about-section, .skills-section, .projects-section, .contact-section {
-    padding: 1.2rem 0.5rem;
-    border-radius: 1rem;
-  }
-  .container {
-    padding: 0 0.5rem;
-  }
 }
