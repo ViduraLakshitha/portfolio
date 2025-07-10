@@ -664,3 +664,61 @@
   .button.primary, .button.secondary { font-size: 1rem; padding: 0.7rem 1.5rem; }
   .hero-socials { gap: 1rem; }
 }
+
+/* Modern Blue & Purple Gradient Palette */
+.hero {
+  background: #181c2b;
+}
+.hero-animated-bg {
+  background: linear-gradient(120deg, #181c2b 0%, #232a47 50%, #181c2b 100%);
+}
+.hero-gradient-text {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px #6a82fb88);
+}
+.hero-content h1 {
+  color: #fff;
+}
+.hero-content .subtitle {
+  color: #b3b8c3;
+}
+.button.primary {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  box-shadow: 0 2px 16px #6a82fb44;
+}
+.button.primary:hover {
+  box-shadow: 0 4px 32px #fc5c7d88;
+}
+.button.secondary {
+  color: #6a82fb;
+  border: 2px solid #6a82fb;
+}
+.button.secondary:hover {
+  background: #6a82fb;
+  color: #fff;
+}
+.hero-bg-dots .dot1 { background: #43e97b88; }
+.hero-bg-dots .dot2 { background: #38f9d788; }
+.hero-bg-dots .dot3 { background: #6a82fb55; }
+.hero-bg-dots .dot4 { background: #fc5c7d55; }
+.hero-bg-dots .dot5 { background: #38f9d744; }
+.shape-star polygon { fill: #fc5c7d; opacity: 0.4; }
+.scroll-indicator .arrow {
+  border-left: 4px solid #6a82fb;
+  border-bottom: 4px solid #6a82fb;
+}
+.hero-socials .social-icon {
+  color: #6a82fb;
+}
+.social-icon:hover {
+  color: #fc5c7d;
+  text-shadow: 0 0 12px #6a82fb, 0 0 24px #fc5c7d;
+}
+#typewriter-subtitle {
+  border-right: 2px solid #fc5c7d;
+}
