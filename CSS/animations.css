@@ -386,3 +386,32 @@
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.8s forwards;
 }
+
+@keyframes fadeInUpUrpal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(4px);
+  }
+  80% {
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: fadeInUpUrpal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.hero-content h1 .hero-animate {
+  text-shadow: 0 0 16px #fff, 0 0 32px #00eaff;
+}
+
+.hero-content .hero-animate:nth-child(1) { animation-delay: 0.2s; }
+.hero-content .hero-animate:nth-child(2) { animation-delay: 0.5s; }
+.hero-content .hero-animate:nth-child(3) { animation-delay: 0.8s; }
