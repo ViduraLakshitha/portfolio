@@ -528,18 +528,20 @@
   100% { transform: scale(1.15) translateY(30px); }
 }
 
-/* Animated Gradient Background */
+/* Dynamic Multi-Color Radial Gradient Background */
 .hero-animated-bg {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   z-index: 0;
-  background: linear-gradient(120deg, #0a0a23 0%, #1a1a40 50%, #0a0a23 100%);
+  background: radial-gradient(circle at 60% 40%, #6a82fb 0%, #43e97b 40%, #fc5c7d 80%, #181c2b 100%);
   background-size: 200% 200%;
-  animation: gradientMove 12s ease-in-out infinite;
+  animation: radialGradientMove 16s ease-in-out infinite;
 }
-@keyframes gradientMove {
+@keyframes radialGradientMove {
   0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
   50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -721,4 +723,17 @@
 }
 #typewriter-subtitle {
   border-right: 2px solid #fc5c7d;
+}
+
+/* Typewriter Blinking Colored Bar Cursor */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #fc5c7d;
+  font-weight: bold;
+  animation: blinkCursor 0.8s steps(1) infinite;
+}
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

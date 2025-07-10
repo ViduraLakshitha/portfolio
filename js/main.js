@@ -46,19 +46,46 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileNavOverlay.addEventListener('click', closeMobileMenu);
   }
 
-  // Typewriter effect for subtitle
+  // Typewriter effect for subtitle (multi-text, looping)
   const subtitle = document.getElementById('typewriter-subtitle');
   if (subtitle) {
-    const text = 'Fullstack Developer';
-    let i = 0;
+    const texts = [
+      'Fullstack Developer',
+      'UI/UX Designer',
+      'Open Source Enthusiast',
+      'Tech Explorer'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+    let cursorSpan = document.createElement('span');
+    cursorSpan.className = 'typewriter-cursor';
+    cursorSpan.textContent = '|';
     subtitle.textContent = '';
+    subtitle.appendChild(cursorSpan);
+
     function type() {
-      if (i < text.length) {
-        subtitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, 70);
+      if (typing) {
+        if (charIndex < texts[textIndex].length) {
+          subtitle.textContent = texts[textIndex].substring(0, charIndex + 1);
+          subtitle.appendChild(cursorSpan);
+          charIndex++;
+          setTimeout(type, 70);
+        } else {
+          typing = false;
+          setTimeout(type, 1200);
+        }
       } else {
-        subtitle.textContent = text; // Remove cursor after typing
+        if (charIndex > 0) {
+          subtitle.textContent = texts[textIndex].substring(0, charIndex - 1);
+          subtitle.appendChild(cursorSpan);
+          charIndex--;
+          setTimeout(type, 30);
+        } else {
+          typing = true;
+          textIndex = (textIndex + 1) % texts.length;
+          setTimeout(type, 400);
+        }
       }
     }
     type();
