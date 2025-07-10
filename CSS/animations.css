@@ -528,9 +528,139 @@
   100% { transform: scale(1.15) translateY(30px); }
 }
 
-/* Responsive */
+/* Animated Gradient Background */
+.hero-animated-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(120deg, #0a0a23 0%, #1a1a40 50%, #0a0a23 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 12s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated Dots/Shapes */
+.hero-bg-dots {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(1px);
+  animation: dotFloat 7s infinite alternate;
+}
+.dot1 { width: 60px; height: 60px; left: 8%; top: 18%; background: #00eaff88; animation-delay: 0s; }
+.dot2 { width: 40px; height: 40px; right: 10%; top: 30%; background: #6f00ff88; animation-delay: 1.5s; }
+.dot3 { width: 30px; height: 30px; left: 20%; bottom: 20%; background: #00eaff55; animation-delay: 3s; }
+.dot4 { width: 80px; height: 80px; right: 18%; bottom: 10%; background: #6f00ff55; animation-delay: 2s; }
+.dot5 { width: 20px; height: 20px; left: 50%; top: 60%; background: #00eaff44; animation-delay: 4s; }
+.shape-star { position: absolute; left: 70%; top: 12%; z-index: 2; animation: starSpin 8s linear infinite; }
+@keyframes dotFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(30px) scale(1.15); }
+}
+@keyframes starSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+/* Parallax Dots (JS will update transform) */
+.dot, .shape-star { transition: transform 0.3s cubic-bezier(.4,2,.6,1); }
+
+/* Typewriter Effect (JS will update content) */
+#typewriter-subtitle {
+  border-right: 2px solid #00eaff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto 2rem auto;
+  min-height: 2.2em;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.scroll-indicator .arrow {
+  display: block;
+  width: 32px; height: 32px;
+  border-left: 4px solid #00eaff;
+  border-bottom: 4px solid #00eaff;
+  transform: rotate(-45deg);
+  margin: 0 auto;
+  animation: arrowBounce 1.5s infinite;
+  opacity: 0.7;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(12px) rotate(-45deg); }
+}
+
+/* Social Icons */
+.hero-socials {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 3;
+}
+.social-icon {
+  font-size: 2rem;
+  color: #00eaff;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  animation: socialIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.hero-socials .social-icon:nth-child(1) { animation-delay: 1.2s; }
+.hero-socials .social-icon:nth-child(2) { animation-delay: 1.4s; }
+.hero-socials .social-icon:nth-child(3) { animation-delay: 1.6s; }
+.social-icon:hover {
+  color: #fff;
+  text-shadow: 0 0 12px #00eaff, 0 0 24px #6f00ff;
+  transform: scale(1.15) translateY(-4px);
+}
+@keyframes socialIn {
+  0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Enhanced Button Hover */
+.button.primary {
+  position: relative;
+  overflow: hidden;
+}
+.button.primary::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;
+  background: rgba(0,234,255,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: 0;
+}
+.button.primary:hover::after {
+  width: 220%; height: 220%;
+}
+.button.primary span, .button.primary a { position: relative; z-index: 1; }
+
+/* Responsive Tweaks */
 @media (max-width: 600px) {
   .hero-content h1 { font-size: 2rem; }
   .hero-content .subtitle { font-size: 1.1rem; }
   .button.primary, .button.secondary { font-size: 1rem; padding: 0.7rem 1.5rem; }
+  .hero-socials { gap: 1rem; }
 }

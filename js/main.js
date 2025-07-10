@@ -45,6 +45,35 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mobileNavOverlay) {
     mobileNavOverlay.addEventListener('click', closeMobileMenu);
   }
+
+  // Typewriter effect for subtitle
+  const subtitle = document.getElementById('typewriter-subtitle');
+  if (subtitle) {
+    const text = 'Fullstack Developer';
+    let i = 0;
+    subtitle.textContent = '';
+    function type() {
+      if (i < text.length) {
+        subtitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 70);
+      } else {
+        subtitle.textContent = text; // Remove cursor after typing
+      }
+    }
+    type();
+  }
+
+  // Parallax effect for dots/shapes
+  const dots = document.querySelectorAll('.dot, .shape-star');
+  document.addEventListener('mousemove', function (e) {
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    dots.forEach((dot, idx) => {
+      const factor = 10 + idx * 6;
+      dot.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+    });
+  });
 });
 
 // Handle contact form submission
