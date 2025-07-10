@@ -36,10 +36,9 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: var(--background);
+  background: #181c2b;
+  color: #b3b8c3;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 /* Typography */
@@ -47,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 h1 {
@@ -76,9 +76,9 @@ h2::after {
 
 /* Layout */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 .about-me {
@@ -87,6 +87,8 @@ h2::after {
 
 section {
     padding: 6rem 0;
+    background: transparent;
+    color: #b3b8c3;
 }
 
 /* Navigation */
@@ -313,34 +315,40 @@ section {
 }
 
 .button.primary {
-    background: var(--gradient-primary);
-    color: white;
-    box-shadow: var(--shadow), var(--glow-primary);
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+    box-shadow: 0 2px 16px #6a82fb44;
 }
 
 .button.secondary {
-    background: white;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    box-shadow: var(--shadow);
+    background: transparent;
+    color: #6a82fb;
+    border: 2px solid #6a82fb;
 }
 
 .button.primary:hover {
-    box-shadow: var(--shadow-lg), var(--glow-secondary);
+    box-shadow: 0 4px 32px #fc5c7d88;
     transform: translateY(-2px);
 }
 
 .button.secondary:hover {
-    background: var(--gradient-primary);
-    color: white;
-    border-color: transparent;
-    box-shadow: var(--shadow-lg), var(--glow-primary);
+    background: #6a82fb;
+    color: #fff;
 }
 
 /* About Section */
 .about-section {
-    padding: 8rem 0;
-    background: var(--background);
+  background: #232a47;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 2px 24px #6a82fb22;
+}
+.about-me h2 {
+  color: #6a82fb;
+}
+.about-details .detail-item i {
+  color: #43e97b;
 }
 
 .about-content {
@@ -416,10 +424,15 @@ section {
 
 /* Skills Section */
 .skills-section {
-    padding: 8rem 0;
-    background: var(--background-alt);
+  background: #232a47;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 2px 24px #fc5c7d22;
 }
-
+.skills-section h2 {
+  color: #fc5c7d;
+}
 .skills-grid {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -443,7 +456,7 @@ section {
 }
 
 .skill-category h3 {
-    color: var(--primary-color);
+    color: #6a82fb;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
@@ -476,16 +489,21 @@ section {
 
 .skill-item i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #38f9d7;
     transition: var(--transition);
 }
 
 /* Projects Section */
 .projects-section {
-    padding: 8rem 0;
-    background: var(--background);
+  background: #232a47;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 2px 24px #43e97b22;
 }
-
+.projects-section h2 {
+  color: #43e97b;
+}
 .projects-grid {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -497,10 +515,10 @@ section {
 
 .project-card {
     position: relative;
-    background: var(--background);
-    border-radius: 20px;
+    background: #181c2b;
+    border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 16px #6a82fb22;
     transition: var(--transition);
 }
 
@@ -586,10 +604,11 @@ section {
 }
 
 .project-tech span {
-    background: var(--primary-light);
-    color: var(--primary-dark);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
+    background: #232a47;
+    color: #43e97b;
+    border-radius: 1rem;
+    padding: 0.2rem 0.8rem;
+    margin-right: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
     transition: var(--transition);
@@ -683,10 +702,15 @@ section {
 
 /* Contact Section */
 .contact-section {
-    padding: 8rem 0;
-    background: var(--background);
+  background: #232a47;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 2px 24px #38f9d722;
 }
-
+.contact-section h2 {
+  color: #38f9d7;
+}
 .contact-content {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -719,7 +743,7 @@ section {
 
 .contact-item i {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #fc5c7d;
     margin-bottom: 1rem;
 }
 
@@ -737,20 +761,21 @@ section {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #6a82fb;
+    border-radius: 1rem;
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
-    background: var(--background);
+    background: #181c2b;
+    color: #fff;
     position: relative;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: #fc5c7d;
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), var(--glow-primary);
     transform: translateY(-2px);
 }
@@ -840,9 +865,10 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--text-color);
-    color: white;
-    padding: 4rem 0;
+    background: #181c2b;
+    color: #b3b8c3;
+    padding: 2rem 0 1rem 0;
+    border-top: 2px solid #232a47;
 }
 
 .footer-content {
@@ -861,9 +887,9 @@ section {
 
 .social-links a {
     position: relative;
-    color: white;
+    color: #6a82fb;
     font-size: 1.5rem;
-    transition: var(--transition);
+    transition: color 0.2s;
     width: 50px;
     height: 50px;
     display: flex;
@@ -902,7 +928,7 @@ section {
 .social-links a:hover {
     transform: translateY(-5px) rotate(360deg);
     box-shadow: var(--shadow-lg), var(--glow-primary);
-    color: white;
+    color: #fc5c7d;
 }
 
 .social-links a:hover::before {
@@ -1169,4 +1195,14 @@ section {
     padding: 5rem 1rem 2rem 1rem;
   }
   .nav-content { padding: 0 0.5rem; }
+}
+
+@media (max-width: 600px) {
+  .about-section, .skills-section, .projects-section, .contact-section {
+    padding: 1.2rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
 }
